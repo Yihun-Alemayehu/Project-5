@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project_5/data/model/user_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final User user;
+   HomeScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,13 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home Screen'),
         centerTitle: true,
       ),
-      body:const  Center(
+      body:  Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Username'),
-            Text('Password'),
+            Text(user.username),
+            const SizedBox(height: 20,),
+            Text(user.password),
 
           ],
         ),
