@@ -9,7 +9,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<LoginEvent>((event, emit) async {
       emit(LoadingState());
-      await Future.delayed(Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 5));
       emit(
         AuthenticatedState(
           user: User(
@@ -19,7 +19,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
     on<RegisterEvent>((event, emit) async {
       emit(LoadingState());
-      await Future.delayed(Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 5));
       emit(
         AuthenticatedState(
           user: User(
